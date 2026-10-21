@@ -70,7 +70,28 @@ https://prod.download.desktop.kiro.dev/releases/stable/linux-x64/signed/1.4.13/d
 
 ## Deployment
 
-Install Wrangler:
+The Worker is configured with `repo.giovannimetitieri.it` as a Cloudflare Custom
+Domain. The domain must be an active zone in your Cloudflare account, and it
+must not already have a conflicting DNS record. Wrangler creates the DNS record
+and certificate when you deploy.
+
+### Automatic deployment
+
+The GitHub Actions workflow validates the Wrangler configuration and deploys the
+Worker on every push to `main`.
+
+Add these repository secrets in **Settings > Secrets and variables > Actions**:
+
+- `CF_API_TOKEN`: a Cloudflare API token allowed to deploy Workers and configure
+  the custom domain/DNS record.
+- `CF_ACCOUNT_ID`: the Cloudflare account ID that owns the Worker and zone.
+
+Keep `wrangler.toml` as the source of truth for deployable Worker settings. The
+Worker already sets cache lifetimes on its responses; Workers Cache behavior is
+driven by those response headers and does not require a separate Wrangler
+setting.
+
+### Local development and manual deployment
 
 ```bash
 npm install
