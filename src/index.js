@@ -1,6 +1,6 @@
 const CONFIG = {
   githubPagesOrigin:
-    "https://giovannimet.github.io/kiro-community-repo",
+    "https://giovannimet.github.io/kiro-community-repo/",
 
   statePath:
     "/state/latest.json",
