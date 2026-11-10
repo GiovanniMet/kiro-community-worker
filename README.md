@@ -20,7 +20,7 @@ This Worker provides a single public endpoint for the repository by:
 APT Client
     |
     v
-repo.kiro-community.dev
+giovannimet.github.io
     |
     +--> GitHub Pages
     |     ├── dists/
